@@ -1,120 +1,218 @@
-/* Body Styles */
-body {
-    font-family: "Inter", sans-serif;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+  }
+  
+  body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
     color: #333;
+    padding: 16px;
+    width: 370px; /* Increase the width */
+    height: 400px; /* Adjust the height as needed */
+    overflow: hidden; /* Prevent scrolling if not needed */
   }
-  
-  /* Container */
-  .container {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  .box {
+    border: 2px solid #ddd; /* Light border around the box */
     padding: 20px;
-    width: 280px;
-    text-align: center;
+    border-radius: 16px; /* Rounded corners */
+    background-color: #fafafa; /* Light background for the box */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Optional shadow for a subtle 3D effect */
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto; /* Centers the box on the page */
   }
   
-  /* Header */
-  h1 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #333;
-  }
   
-  /* Color Picker Container */
-  .color-picker-container {
+  .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  /* Color Display */
-  .color-display {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-  
-  #selected-color {
-    width: 80px;
-    height: 80px;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .color-values {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    font-size: 14px;
-  }
-  
-  /* Button Actions */
-  .color-actions {
-    display: flex;
-    justify-content: center;
+    gap: 24px;
+    max-width: 400px;
     width: 100%;
   }
   
-  #pick-color-btn {
-    padding: 12px 18px;
-    background-color: #6a62d9;
-    color: white;
-    border: none;
+  .color-preview-section {
+    background-color: #f4f4f4;
     border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .preview-container {
+    position: relative;
+    min-width: 48px;
+  }
+  
+  #colorPreview {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .eyedropper-button {
+    position: absolute;
+    bottom: -8px;
+    right: -8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #d1d1d1;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 0;
   }
   
-  #pick-color-btn:hover {
-    background-color: #4b47c7;
+  .eyedropper-button:hover {
+    background-color: #b0b0b0;
+    transform: scale(1.1);
   }
   
-  /* Color Value Display */
-  .color-values div {
+  .eyedropper-button:active {
+    background-color: #a0a0a0;
+    transform: scale(0.95);
+  }
+  
+  .eyedropper-button svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .preview-text {
     color: #555;
     font-size: 14px;
+    line-height: 1.4;
+    flex: 1;
   }
   
-  /* Recent Colors Section */
-  .recent-colors {
-    margin-top: 30px;
-  }
-  
-  h2 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 15px;
-  }
-  
-  #recent-colors-list {
+  .color-values-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
   }
   
-  .recent-color-box {
-    width: 100%;
-    aspect-ratio: 1;
+  .color-value {
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: left;
+    border: none;
+    color: inherit;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .color-value:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .color-value:active {
+    background-color: #c0c0c0;
+  }
+  
+  .format-label {
+    color: #666;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  
+  .color-code {
+    color: #333;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+  }
+  
+  .recent-colors {
+    margin-top: 24px;
+  }
+  
+  .recent-colors h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #777;
+    margin: 0 0 12px 0;
+    font-weight: 500;
+  }
+  
+  #recentColorsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .recent-color {
+    width: 36px;
+    height: 36px;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
   }
   
-  .recent-color-box:hover {
-    transform: scale(1.05);
+  .recent-color:hover {
+    transform: scale(1.1);
   }
+  
+  .toast {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .toast.show {
+    opacity: 1;
+  }
+  
+  /* Active picking state */
+  .picking-active .eyedropper-button {
+    background-color: #a0a0a0;
+    transform: scale(0.95);
+  }
+
+  /* Add styles for the copy-to-clipboard button */
+.copy-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.copy-button:hover {
+  transform: scale(1.1);
+}
+
+.copy-button svg {
+  width: 12px;
+  height: 12px;
+  color: #666;
+}
+
   
