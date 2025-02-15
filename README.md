@@ -3,7 +3,7 @@
 A simple Chrome extension that allows users to pick colors from anywhere on the screen. The extension enables users to view, copy, and store recent color picks in various formats (HEX, RGB, etc.), providing a convenient tool for designers, developers, and anyone working with colors.
 
 
-![Pick Paette](https://github.com/user-attachments/assets/5d30bec6-c4c4-41f2-8fce-d7c3b8a79615)
+![Screenshot 2025-02-16 at 05 16 51](https://github.com/user-attachments/assets/16be6732-f150-4fd6-ad35-d8fc211b02aa)
 
 
 ## Features
