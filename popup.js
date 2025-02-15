@@ -105,12 +105,5 @@ if (window.EyeDropper) {
   });
 }
 
-// Regular color picker input
-colorPicker.addEventListener('input', (e) => {
-  const color = e.target.value;
-  updateColorDisplay(color);
-  addToRecentColors(color);
-});
-
 // On load, render any stored recent colors
 renderRecentColors();
