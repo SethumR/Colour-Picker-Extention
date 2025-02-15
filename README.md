@@ -19,4 +19,4 @@ A simple Chrome extension that allows users to pick colors from anywhere on the 
 
 1. Clone the repository or download the zip file.
    ```bash
-   git clone [https://github.com/yourusername/color-picker-extension.git](https://github.com/SethumR/Colour-Picker-Extention.git)
+   git clone https://github.com/SethumR/Colour-Picker-Extention.git
