@@ -1,37 +1,120 @@
+/* Body Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 10px;
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
   }
   
-  #color-picker-container {
+  /* Container */
+  .container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 280px;
     text-align: center;
   }
   
+  /* Header */
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Color Picker Container */
+  .color-picker-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Color Display */
+  .color-display {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
   #selected-color {
-    width: 100px;
-    height: 100px;
-    border: 1px solid #ccc;
-    margin-top: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  #color-values {
-    margin-top: 10px;
+  .color-values {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
   }
   
-  #recent-colors {
-    margin-top: 20px;
+  /* Button Actions */
+  .color-actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  #pick-color-btn {
+    padding: 12px 18px;
+    background-color: #6a62d9;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  #pick-color-btn:hover {
+    background-color: #4b47c7;
+  }
+  
+  /* Color Value Display */
+  .color-values div {
+    color: #555;
+    font-size: 14px;
+  }
+  
+  /* Recent Colors Section */
+  .recent-colors {
+    margin-top: 30px;
+  }
+  
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
   }
   
   #recent-colors-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
   }
   
   .recent-color-box {
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
     cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .recent-color-box:hover {
+    transform: scale(1.05);
   }
   

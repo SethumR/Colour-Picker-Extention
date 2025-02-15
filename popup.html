@@ -5,26 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PickPalette</title>
   <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="color-picker-container">
-    <input type="color" id="color-picker" />
-    <!-- Add this to your existing popup.html -->
-<button id="pick-color-btn">Pick Color from Screen</button>
-
-    <div id="color-display">
-      <div id="selected-color"></div>
-      <div id="color-values">
-        <div id="hex-value"></div>
-        <div id="rgb-value"></div>
-        <div id="hsl-value"></div>
-        <div id="cmyk-value"></div>
+  <div class="container">
+    <h1>PickPalette</h1>
+    <div class="color-picker-container">
+      <div class="color-display">
+        <div id="selected-color"></div>
+        <div class="color-values">
+          <div id="hex-value"></div>
+          <div id="rgb-value"></div>
+          <div id="hsl-value"></div>
+          <div id="cmyk-value"></div>
+        </div>
+      </div>
+      <div class="color-actions">
+        <button id="pick-color-btn">Pick from Screen</button>
       </div>
     </div>
-  </div>
-  <div id="recent-colors">
-    <h3>Recent Colors</h3>
-    <div id="recent-colors-list"></div>
+    <div class="recent-colors">
+      <h2>Recent Colors</h2>
+      <div id="recent-colors-list"></div>
+    </div>
   </div>
   <script src="popup.js"></script>
 </body>
